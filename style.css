@@ -6,7 +6,7 @@
 	--main-color: white;
 	--theme-color: #1A8CD8;
 	--lightGray-color: #273340;
-	
+
 	--trans-clr: rgba(0, 0, 0, 0.5);
 }
 
@@ -32,8 +32,10 @@ body {
 	/* background-repeat: no-repeat; */
 	/* background-attachment: fixed; */
 	transition: background 0.5s linear;
-	font-family: 'serif','Manrope', sans-serif;
+	font-family: 'Manrope', sans-serif;
 }
+
+/* 'serif', */
 .nav-bar {
 	width: 100%;
 	background-color: var(--trans-clr);
@@ -65,7 +67,7 @@ body {
 	text-decoration: line-through;
 } */
 
-.todoItem{
+.todoItem {
 
 	padding: 15px;
 	border-radius: 50px;
@@ -75,7 +77,8 @@ body {
 	border: none;
 	text-align: center;
 }
-.todoItem::placeholder{
+
+.todoItem::placeholder {
 	color: var(--main-color);
 	font-family: inherit;
 }

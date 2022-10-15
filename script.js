@@ -47,7 +47,7 @@ const deleteTodo = () => {
 };
 
 document.querySelector("#todoList").addEventListener("click", (event) => {
-  event.target.style.color = "red";
+  //   event.target.style.color = "red";
 
   if (event.target.style.textDecoration === "none") {
     event.target.style.textDecoration = "line-through";
