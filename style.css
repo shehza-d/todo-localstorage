@@ -1,4 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&display=swap');
+
+
+.darkMode {
+	--bg-color: rgb(21, 32, 43);
+	--main-color: white;
+	--theme-color: #1A8CD8;
+	--lightGray-color: #273340;
+}
+
+/* color: var(--bg-color); */
+.lightMode {
+	--bg-color: rgb(247, 247, 247);
+	--main-color: black;
+	--theme-color: #1A8CD8;
+	--lightGray-color: #E7E7E8;
+}
+
+body {
+	margin: 0px;
+	color: var(--main-color);
+	background-color: var(--bg-color);
+	/* display: flex;
+	justify-content: center;
+	align-items: center; */
+	/* flex-direction: column; */
+	/* background: url(./img/unsplash-nature.jpg); */
+	/* background-repeat: no-repeat; */
+	/* background-attachment: fixed; */
+
+	font-family: 'Manrope', sans-serif;
+}
+.nav-bar {
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	color: rgb(255, 255, 255);
+	display: flex;
+	justify-content: space-between;
+}
+
+.nav-bar>h1 {
+	margin: 0px;
+	margin-left: 70px;
+	padding: 30px;
+}
+
+.nav-bar>#dateDiv {
+	padding: 22px;
+	text-transform: uppercase;
+}
+
+.nav-bar>#dateDiv>div {
+	margin: 8px;
+}
+
 /* #todoList{
 	color: red;
 	text-decoration: line-through;
 } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 450px) {
+	/* .posts>p {
+	  background-color: red;
+	} */
+}
