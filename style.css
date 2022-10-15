@@ -6,6 +6,8 @@
 	--main-color: white;
 	--theme-color: #1A8CD8;
 	--lightGray-color: #273340;
+	
+	--trans-clr: rgba(0, 0, 0, 0.5);
 }
 
 /* color: var(--bg-color); */
@@ -14,10 +16,12 @@
 	--main-color: black;
 	--theme-color: #1A8CD8;
 	--lightGray-color: #E7E7E8;
+	--trans-clr: rgba(255, 255, 255, 0.5);
 }
 
 body {
 	margin: 0px;
+	height: 100vh;
 	color: var(--main-color);
 	background-color: var(--bg-color);
 	/* display: flex;
@@ -27,12 +31,12 @@ body {
 	/* background: url(./img/unsplash-nature.jpg); */
 	/* background-repeat: no-repeat; */
 	/* background-attachment: fixed; */
-
-	font-family: 'Manrope', sans-serif;
+	transition: background 0.5s linear;
+	font-family: 'serif','Manrope', sans-serif;
 }
 .nav-bar {
 	width: 100%;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: var(--trans-clr);
 
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(10px);
@@ -61,13 +65,20 @@ body {
 	text-decoration: line-through;
 } */
 
+.todoItem{
 
-
-
-
-
-
-
+	padding: 15px;
+	border-radius: 50px;
+	font-size: 18px;
+	background-color: var(--trans-clr);
+	/* color: #ffffff; */
+	border: none;
+	text-align: center;
+}
+.todoItem::placeholder{
+	color: var(--main-color);
+	font-family: inherit;
+}
 
 
 
