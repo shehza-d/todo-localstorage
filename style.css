@@ -1,65 +1,83 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&display=swap");
 
 .darkMode {
-	--bg-color: rgb(21, 32, 43);
-	--main-color: white;
-	--theme-color: #1A8CD8;
-	--lightGray-color: #273340;
+  --bg-color: rgb(21, 32, 43);
+  --main-color: white;
+  --theme-color: #1a8cd8;
+  --lightGray-color: #273340;
 
-	--trans-clr: rgba(0, 0, 0, 0.5);
+  --trans-clr: rgba(0, 0, 0, 0.5);
 }
 
 /* color: var(--bg-color); */
 .lightMode {
-	--bg-color: rgb(247, 247, 247);
-	--main-color: black;
-	--theme-color: #1A8CD8;
-	--lightGray-color: #E7E7E8;
-	--trans-clr: rgba(255, 255, 255, 0.5);
+  --bg-color: rgb(214, 207, 207);
+  --main-color: black;
+  --theme-color: #1a8cd8;
+  --lightGray-color: #e7e7e8;
+  --trans-clr: rgba(255, 255, 255, 0.5);
 }
-
+* {
+  color: var(--main-color);
+}
 body {
-	margin: 0px;
-	height: 100vh;
-	color: var(--main-color);
-	background-color: var(--bg-color);
-	/* display: flex;
-	justify-content: center;
-	align-items: center; */
-	/* flex-direction: column; */
-	/* background: url(./img/unsplash-nature.jpg); */
-	/* background-repeat: no-repeat; */
-	/* background-attachment: fixed; */
-	transition: background 0.5s linear;
-	font-family: 'Manrope', sans-serif;
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+  color: var(--main-color);
+  background-color: var(--bg-color);
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  /* background: url(./img/unsplash-nature.jpg);
+  /* background-repeat: no-repeat; */
+  /* background-attachment: fixed; */
+  transition: background 0.5s linear;
+  font-family: "Manrope", sans-serif;
 }
 
 /* 'serif', */
 .nav-bar {
-	width: 100%;
-	background-color: var(--trans-clr);
+  width: 100%;
+  background-color: var(--trans-clr);
+  box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.5);
 
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	color: rgb(255, 255, 255);
-	display: flex;
-	justify-content: space-between;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nav-bar>h1 {
-	margin: 0px;
-	margin-left: 70px;
-	padding: 30px;
+.nav-bar > h1 {
+  margin: 0px;
+  margin-left: 70px;
+  padding: 30px;
 }
 
-.nav-bar>#dateDiv {
-	padding: 22px;
-	text-transform: uppercase;
+.nav-bar > .dateDiv {
+  padding: 22px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
 }
 
-.nav-bar>#dateDiv>div {
-	margin: 8px;
+.nav-bar > #dateDiv > div {
+  margin: 8px;
+}
+
+.nav-bar button {
+  background-color: var(--lightGray-color);
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  margin-left: 10px;
+  border: none;
+  outline: none;
+  box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.5);
+  /* margin-right: 50px; */
 }
 
 /* #todoList{
@@ -68,28 +86,71 @@ body {
 } */
 
 .todoItem {
+  padding: 15px;
+  border-radius: 50px;
+  font-size: 18px;
+  background-color: var(--trans-clr);
+  /* color: #ffffff; */
+  border: none;
+  text-align: center;
+  box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.5);
 
-	padding: 15px;
-	border-radius: 50px;
-	font-size: 18px;
-	background-color: var(--trans-clr);
-	/* color: #ffffff; */
-	border: none;
-	text-align: center;
 }
 
 .todoItem::placeholder {
-	color: var(--main-color);
-	font-family: inherit;
+  color: var(--main-color);
+  font-family: inherit;
 }
 
+.form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
 
+.form button {
+  border: none;
+  outline: none;
+  margin-left: 5px;
+  background-color: var(--lightGray-color);
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.5);
 
+}
 
+#todoList {
+  /* border: 2px solid green; */
+  list-style: none;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+}
 
+#todoList li {
+  /* border: 2px solid green; */
+  list-style: none;
+  width: 90%;
+  height: 70px;
+  margin: 20px 0;
+  padding-left: 15px;
+  border-radius: 30px;
+  background-color: var(--trans-clr);
+  box-shadow: 0px 5px 10px 1px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+}
 
 @media only screen and (max-width: 450px) {
-	/* .posts>p {
-	  background-color: red;
-	} */
+  #todoList {
+    /* border: 2px solid green; */
+    /* list-style: none; */
+    width: 100vw;
+    /* display: flex; */
+    /* flex-directi/on: column; */
+  }
 }
