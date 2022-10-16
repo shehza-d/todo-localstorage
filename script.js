@@ -23,7 +23,6 @@ const addTodo = (event) => {
     alert("string can't be greater then 40");
     return;
   }
-  // if(!todo) console.log(`emty str`)
   if (todo === "") return;
   arrayOfTodos.push(todo);
   localStorage.setItem("todoList", JSON.stringify(arrayOfTodos));
@@ -47,15 +46,13 @@ const deleteTodo = () => {
 };
 
 document.querySelector("#todoList").addEventListener("click", (event) => {
-  //   event.target.style.color = "red";
-
   if (event.target.style.textDecoration === "none") {
     event.target.style.textDecoration = "line-through";
   } else {
     event.target.style.textDecoration = "none";
   }
-  console.log(event.target.style.textDecoration);
-  //   event.target.style.decoration = "line-through";
+  // event.target.style.color = "red";
+  // console.log(event.target.style.textDecoration);
 });
 
 //theme function
@@ -68,5 +65,3 @@ const themeChange = () => {
     document.body.classList.remove("darkMode");
   }
 };
-
-//new API key 4719f247a38849138501b4bc9b42699e
