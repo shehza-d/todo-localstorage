@@ -1,0 +1,16 @@
+{
+  "name": "ToDo List Shehzad",
+  "short_name": "ToDo Shehzad",
+  "description": "A simple to-do list app that works offline",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#79D7BE",
+  "icons": [
+    {
+      "src": "/Assets/todo-fav.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ]
+}
