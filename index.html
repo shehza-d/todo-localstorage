@@ -1,45 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./assets/todo-fav.png"
+      type="image/x-icon"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="./Assets/todo-fav.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css" />
 
-  <link rel="stylesheet" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/6b896963d9.js"
+      crossorigin="anonymous"
+    ></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-  <script src="https://kit.fontawesome.com/6b896963d9.js" crossorigin="anonymous"></script>
+    <!-- connecting manifest.json for PWA -->
+    <link rel="manifest" href="./manifest.json" />
 
-  <!-- connecting manifest.json for PWA -->
-  <link rel="manifest" href="manifest.json">
+    <title>Todo App</title>
+  </head>
 
-  <title>Todo App</title>
-</head>
-
-<body class="lightMode">
-  <nav class="nav-bar">
-    <h1 class="heading">To Do List</h1>
-    <div class="dateDiv">
-      <div>
-        <div id="date"></div>
-        <div id="time"></div>
+  <body class="lightMode">
+    <nav class="nav-bar">
+      <h1 class="heading">To Do List</h1>
+      <div class="dateDiv">
+        <div>
+          <div id="date"></div>
+          <div id="time"></div>
+        </div>
+        <button onclick="themeChange()">
+          <i class="fa-regular fa-lightbulb" style="font-size: 26px"></i>
+        </button>
       </div>
-      <button onclick="themeChange()"><i class="fa-regular fa-lightbulb" style="font-size: 26px;"></i></button>
+    </nav>
+
+    <div class="form">
+      <form onsubmit="addTodo(event)">
+        <input
+          type="text"
+          id="todoItem"
+          class="todoItem"
+          placeholder="Your ToDo Item here!"
+          required
+        />
+      </form>
+      <button onclick="deleteTodo()">
+        <i class="fa-solid fa-trash-can" style="font-size: 26px"></i>
+      </button>
     </div>
-  </nav>
+    <ul id="todoList"></ul>
 
-  <div class="form">
-    <form onsubmit="addTodo(event)">
-      <input type="text" id="todoItem" class="todoItem" placeholder="Your ToDo Item here!" required />
-    </form>
-    <button onclick="deleteTodo()"><i class="fa-solid fa-trash-can " style="font-size: 26px;"></i></button>
-  </div>
-  <ul id="todoList"></ul>
-
-  <script src="./script.js"></script>
-  <script src="./connecting-sw.js"></script>
-</body>
-
+    <script src="./script.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then((registration) => {
+            console.log(
+              "Service Worker registered with scope:",
+              registration.scope
+            );
+          })
+          .catch((error) => {
+            console.error("Service Worker registration failed:", error);
+          });
+      }
+    </script>
+  </body>
 </html>
